@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Maid Nanny Platform API",
+    "_postman_id": "8d36f6f5-c2c8-45cf-8dc2-b3c6eac149a5",
+    "description": "Postman sample requests for local SQLite backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api", "auth", "register"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Test User\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"user123\",\n  \"role\": \"household\",\n  \"city\": \"Surat\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"user123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Helpers - List with filters",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/helpers?serviceId=1&availability=full-time&minExperience=2", "host": ["{{baseUrl}}"], "path": ["api", "helpers"], "query": [{ "key": "serviceId", "value": "1" }, { "key": "availability", "value": "full-time" }, { "key": "minExperience", "value": "2" }] }
+      }
+    },
+    {
+      "name": "Bookings - Create",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }, { "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": { "raw": "{{baseUrl}}/api/bookings", "host": ["{{baseUrl}}"], "path": ["api", "bookings"] },
+        "body": { "mode": "raw", "raw": "{\n  \"helperId\": 1,\n  \"serviceDate\": \"2026-05-15\",\n  \"notes\": \"Need morning shift\"\n}" }
+      }
+    },
+    {
+      "name": "Bookings - My history",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+        "url": { "raw": "{{baseUrl}}/api/bookings/me", "host": ["{{baseUrl}}"], "path": ["api", "bookings", "me"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" },
+    { "key": "token", "value": "" }
+  ]
+}

@@ -1,0 +1,130 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Inter", Roboto, sans-serif;
+  background: linear-gradient(120deg, #f1e8dc 0%, #f6f1e8 45%, #e8f0df 100%);
+  color: #1f2b21;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.surface-card {
+  @apply rounded-3xl bg-[#f8f4ed] border border-[#e3dbcc] shadow-[0_8px_26px_rgba(27,37,30,0.08)];
+}
+
+.primary-btn {
+  @apply rounded-full px-5 py-2 text-sm font-semibold text-white bg-[#10241b] transition hover:-translate-y-0.5 hover:shadow-lg;
+}
+
+.outline-btn {
+  @apply rounded-full px-5 py-2 text-sm font-semibold border border-[#c8bfaf] text-[#233328] transition hover:bg-[#ece5d8];
+}
+
+.page-shell {
+  @apply max-w-7xl mx-auto px-4 pb-10 pt-6 sm:px-6 sm:pt-8 lg:px-8;
+}
+
+.section-title {
+  @apply text-4xl sm:text-5xl font-semibold tracking-tight text-[#20271f] leading-tight;
+}
+
+.section-subtitle {
+  @apply text-base text-[#5f675d] mt-2;
+}
+
+.glass-surface {
+  @apply bg-[#f5efe4]/90 border border-[#ded4c3] backdrop-blur-md;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #345b3c 0%, #d97943 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-search-wrap {
+  @apply flex flex-col sm:flex-row sm:items-center rounded-2xl border border-[#ddd2be] bg-[#f8f4ec] p-2 shadow-sm gap-2;
+}
+
+.hero-search-icon {
+  @apply text-[#6f746f] text-[20px] pl-2 pr-2;
+}
+
+.hero-search-input {
+  @apply h-11 w-full sm:flex-1 border-0 bg-transparent text-sm text-[#2d362f] outline-none;
+}
+
+.hero-search-input::placeholder {
+  color: #797f73;
+}
+
+.hero-search-btn {
+  height: 44px;
+  @apply rounded-xl px-6 font-semibold w-full sm:w-auto;
+}
+
+.filter-label {
+  @apply block text-xs font-semibold uppercase tracking-wide text-[#788072];
+}
+
+.filter-select {
+  @apply w-full h-12 rounded-xl border border-[#d8ceb9] bg-[#f7f2e8] px-4 text-base text-[#283328] outline-none transition;
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #64748b 50%), linear-gradient(135deg, #64748b 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.filter-select:focus {
+  border-color: #36523c;
+  box-shadow: 0 0 0 3px rgba(53, 82, 60, 0.18);
+}
+
+.booking-field {
+  @apply w-full rounded-xl border border-[#d8ceb9] bg-[#f7f2e8] px-4 text-base text-[#283328] outline-none transition;
+  min-height: 48px;
+}
+
+.booking-field:focus {
+  border-color: #36523c;
+  box-shadow: 0 0 0 3px rgba(53, 82, 60, 0.18);
+}
+
+.booking-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #64748b 50%), linear-gradient(135deg, #64748b 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.booking-textarea {
+  min-height: 112px;
+  resize: vertical;
+  padding-top: 12px;
+}
+
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: #10241b;
+  --mdc-filled-button-label-text-color: #ffffff;
+  border-radius: 999px !important;
+}
+
+.mat-mdc-outlined-button.mat-primary {
+  --mdc-outlined-button-label-text-color: #223427;
+  --mdc-outlined-button-outline-color: #c8bfaf;
+  border-radius: 999px !important;
+}

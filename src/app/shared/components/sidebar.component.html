@@ -1,0 +1,11 @@
+<aside class="w-full md:w-72 p-4 md:p-6 bg-white/95 border-b md:border-b-0 border-r border-slate-200">
+  <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-4">Workspace</p>
+  <div class="space-y-2">
+    @for (item of menu; track item.path) {
+      <a [routerLink]="item.path" routerLinkActive="bg-indigo-50 text-brand-primary border-indigo-100 shadow-sm" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 border border-transparent hover:bg-slate-50 transition">
+        <span class="material-symbols-outlined text-base bg-slate-100 rounded-md p-1">{{ item.icon }}</span>
+        {{ item.label }}
+      </a>
+    }
+  </div>
+</aside>

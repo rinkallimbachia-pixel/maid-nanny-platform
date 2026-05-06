@@ -1,0 +1,53 @@
+<header class="sticky top-0 z-30 border-b border-[#ddd2be] glass-surface">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5">
+    <div class="flex items-center justify-between gap-3">
+      <a routerLink="/" class="flex items-center gap-2.5 text-[#1d2c21] font-semibold text-lg tracking-tight">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#1e4a33] text-sm font-bold text-white">C</span>
+        <span class="leading-tight">CareNest <span class="block text-[10px] font-medium tracking-[0.15em] text-[#7d8177] uppercase">Trusted Helpers</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 rounded-full border border-[#dcd1bd] bg-[#f8f2e6] p-1 text-sm text-[#5e655b] shadow-sm">
+        <a routerLink="/search" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="rounded-full px-4 py-1.5 hover:bg-[#eee7d8] hover:text-[#1f2a1f] transition">{{ t('findHelpers') }}</a>
+        <a routerLink="/dashboard" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="rounded-full px-4 py-1.5 hover:bg-[#eee7d8] hover:text-[#1f2a1f] transition">{{ t('dashboard') }}</a>
+        <a routerLink="/booking" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="rounded-full px-4 py-1.5 hover:bg-[#eee7d8] hover:text-[#1f2a1f] transition">{{ t('bookings') }}</a>
+        @if (isLoggedIn && userRole === 'helper') {
+          <a routerLink="/helper-dashboard" routerLinkActive="bg-indigo-50 text-indigo-700" class="rounded-lg px-3 py-1.5 hover:bg-slate-100 hover:text-brand-primary transition">Helper Requests</a>
+        }
+        @if (isLoggedIn && userRole === 'admin') {
+          <a routerLink="/admin/booking-management" routerLinkActive="bg-indigo-50 text-indigo-700" class="rounded-lg px-3 py-1.5 hover:bg-slate-100 hover:text-brand-primary transition">Admin Bookings</a>
+          <a routerLink="/admin/verify-helpers" routerLinkActive="bg-indigo-50 text-indigo-700" class="rounded-lg px-3 py-1.5 hover:bg-slate-100 hover:text-brand-primary transition">Verify Helpers</a>
+        }
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="hidden sm:flex rounded-full border border-[#dcd1bd] bg-[#f8f2e6] p-1">
+          <button class="px-2 py-1 text-xs" [class.font-bold]="language === 'en'" (click)="setLanguage('en')">EN</button>
+          <button class="px-2 py-1 text-xs" [class.font-bold]="language === 'hi'" (click)="setLanguage('hi')">HI</button>
+        </div>
+        @if (!isLoggedIn) {
+          <button mat-stroked-button color="primary" routerLink="/auth/login">{{ t('login') }}</button>
+          <button mat-flat-button color="primary" routerLink="/auth/register">{{ t('register') }}</button>
+        } @else {
+          <div class="flex items-center gap-2 rounded-full border border-[#dcd1bd] bg-[#f8f2e6] px-2.5 py-1.5">
+            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[#dce5d4] text-sm font-semibold text-[#245038]">
+              {{ initials }}
+            </div>
+            <p class="text-sm font-medium text-[#2f3a31] max-w-[120px] truncate">{{ userName }}</p>
+            <button mat-stroked-button color="primary" (click)="logout()">{{ t('logout') }}</button>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="md:hidden mt-3 flex items-center gap-2 overflow-x-auto pb-1 text-sm text-[#5f675d]">
+      <a routerLink="/search" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="whitespace-nowrap rounded-full px-3 py-1.5 border border-[#d8ccb7] bg-[#f8f2e6]">{{ t('findHelpers') }}</a>
+      <a routerLink="/dashboard" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="whitespace-nowrap rounded-full px-3 py-1.5 border border-[#d8ccb7] bg-[#f8f2e6]">{{ t('dashboard') }}</a>
+      <a routerLink="/booking" routerLinkActive="bg-[#ece4d5] text-[#1f2a1f]" class="whitespace-nowrap rounded-full px-3 py-1.5 border border-[#d8ccb7] bg-[#f8f2e6]">{{ t('bookings') }}</a>
+      @if (isLoggedIn && userRole === 'helper') {
+        <a routerLink="/helper-dashboard" routerLinkActive="bg-indigo-50 text-indigo-700" class="whitespace-nowrap rounded-lg px-3 py-1.5 border border-slate-200 bg-white">Helper Requests</a>
+      }
+      @if (isLoggedIn && userRole === 'admin') {
+        <a routerLink="/admin/booking-management" routerLinkActive="bg-indigo-50 text-indigo-700" class="whitespace-nowrap rounded-lg px-3 py-1.5 border border-slate-200 bg-white">Admin Bookings</a>
+        <a routerLink="/admin/verify-helpers" routerLinkActive="bg-indigo-50 text-indigo-700" class="whitespace-nowrap rounded-lg px-3 py-1.5 border border-slate-200 bg-white">Verify Helpers</a>
+      }
+    </div>
+  </nav>
+</header>

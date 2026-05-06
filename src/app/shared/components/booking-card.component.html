@@ -1,0 +1,8 @@
+<div class="surface-card px-5 py-4 sm:px-6 sm:py-5 flex flex-wrap items-center justify-between gap-4">
+  <div class="space-y-1">
+    <p class="text-xs uppercase tracking-wide text-slate-400">{{ booking.id }}</p>
+    <h4 class="font-semibold tracking-tight text-lg leading-tight">{{ booking.helper }}</h4>
+    <p class="text-sm text-slate-500">{{ booking.date }}</p>
+  </div>
+  <app-status-badge [label]="booking.status"></app-status-badge>
+</div>

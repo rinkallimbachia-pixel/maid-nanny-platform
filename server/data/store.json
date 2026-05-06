@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "54133640-da88-43da-9fde-3d03dce11fa9",
+      "fullName": "Riya Sharma",
+      "email": "household@example.com",
+      "password": "123456",
+      "role": "household",
+      "city": "Surat",
+      "createdAt": "2026-04-28T08:43:52.155Z"
+    },
+    {
+      "id": "38ae87c1-1e39-4521-ae14-abaee8d311e1",
+      "fullName": "Seema Patel",
+      "email": "helper@example.com",
+      "password": "123456",
+      "role": "helper",
+      "city": "Surat",
+      "createdAt": "2026-04-28T08:43:52.156Z"
+    },
+    {
+      "id": "f5895d49-6805-46bf-b1ee-93b286023c75",
+      "fullName": "Admin User",
+      "email": "admin@example.com",
+      "password": "123456",
+      "role": "admin",
+      "city": "Surat",
+      "createdAt": "2026-04-28T08:43:52.156Z"
+    }
+  ],
+  "helpers": [
+    {
+      "id": "6c221a0e-b452-4bf8-ae7e-50fac1661b43",
+      "userEmail": "helper@example.com",
+      "name": "Seema Patel",
+      "serviceType": "maid",
+      "experienceYears": 4,
+      "city": "Surat",
+      "availability": "full-time",
+      "verificationStatus": "approved",
+      "rating": 4.6,
+      "skills": [
+        "Cleaning",
+        "Cooking",
+        "Laundry"
+      ],
+      "plans": {
+        "hourly": 180,
+        "monthly": 14500,
+        "yearly": 165000
+      },
+      "bio": "Experienced household helper with child-friendly and hygiene-first approach.",
+      "createdAt": "2026-04-28T08:43:52.156Z",
+      "updatedAt": "2026-04-28T08:43:52.156Z"
+    },
+    {
+      "id": "3ceba1af-d8e2-43c8-a0af-1d60e8e2c41a",
+      "userEmail": "pending.helper@example.com",
+      "name": "Neha Verma",
+      "serviceType": "nanny",
+      "experienceYears": 3,
+      "city": "Ahmedabad",
+      "availability": "part-time",
+      "verificationStatus": "pending",
+      "rating": 4.2,
+      "skills": [
+        "Infant Care",
+        "Meal Prep",
+        "Play Activities"
+      ],
+      "plans": {
+        "hourly": 250,
+        "monthly": 18000,
+        "yearly": 210000
+      },
+      "bio": "Loving nanny focused on child safety and early learning routines.",
+      "createdAt": "2026-04-28T08:43:52.156Z",
+      "updatedAt": "2026-04-28T08:43:52.156Z"
+    }
+  ],
+  "bookings": [],
+  "reviews": []
+}
